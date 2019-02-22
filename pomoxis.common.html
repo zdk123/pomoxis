@@ -1,0 +1,1201 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>pomoxis.common package &mdash; Pomoxis 0.2.2 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script type="text/javascript" src="_static/jquery.js"></script>
+        <script type="text/javascript" src="_static/underscore.js"></script>
+        <script type="text/javascript" src="_static/doctools.js"></script>
+        <script type="text/javascript" src="_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="pomoxis.provider package" href="pomoxis.provider.html" />
+    <link rel="prev" title="pomoxis.align package" href="pomoxis.align.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home"> Pomoxis
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.2.2
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="examples.html">Pomoxis Examples</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="pomoxis.html">pomoxis package</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="pomoxis.html#subpackages">Subpackages</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="pomoxis.align.html">pomoxis.align package</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">pomoxis.common package</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#submodules">Submodules</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#module-pomoxis.common.bio">pomoxis.common.bio module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#module-pomoxis.common.catalogue_errors">pomoxis.common.catalogue_errors module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#module-pomoxis.common.common_errors_from_bam">pomoxis.common.common_errors_from_bam module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#module-pomoxis.common.coverage_from_bam">pomoxis.common.coverage_from_bam module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#module-pomoxis.common.qscores_from_summary">pomoxis.common.qscores_from_summary module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#module-pomoxis.common.ref_seqs_from_bam">pomoxis.common.ref_seqs_from_bam module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#module-pomoxis.common.simulate_calls">pomoxis.common.simulate_calls module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#module-pomoxis.common.stats_from_bam">pomoxis.common.stats_from_bam module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#module-pomoxis.common.subsample_bam">pomoxis.common.subsample_bam module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#module-pomoxis.common.summary_from_stats">pomoxis.common.summary_from_stats module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#module-pomoxis.common.trim_alignments">pomoxis.common.trim_alignments module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#module-pomoxis.common.util">pomoxis.common.util module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#module-pomoxis.common">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="pomoxis.provider.html">pomoxis.provider package</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="pomoxis.html#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pomoxis.html#module-pomoxis.watcher">pomoxis.watcher module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pomoxis.html#module-pomoxis">Module contents</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Pomoxis</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="pomoxis.html">pomoxis package</a> &raquo;</li>
+        
+      <li>pomoxis.common package</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/pomoxis.common.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="pomoxis-common-package">
+<h1>pomoxis.common package<a class="headerlink" href="#pomoxis-common-package" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="module-pomoxis.common.bio">
+<span id="pomoxis-common-bio-module"></span><h2>pomoxis.common.bio module<a class="headerlink" href="#module-pomoxis.common.bio" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="pomoxis.common.bio.reverse_complement">
+<code class="descclassname">pomoxis.common.bio.</code><code class="descname">reverse_complement</code><span class="sig-paren">(</span><em>seq</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pomoxis/common/bio.html#reverse_complement"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pomoxis.common.bio.reverse_complement" title="Permalink to this definition">¶</a></dt>
+<dd><p>Reverse complement sequence.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Param:</th><td class="field-body">input sequence string.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">reverse-complemented string.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="pomoxis.common.bio.shotgun_library">
+<code class="descclassname">pomoxis.common.bio.</code><code class="descname">shotgun_library</code><span class="sig-paren">(</span><em>fasta_file</em>, <em>mu</em>, <em>sigma</em>, <em>direction=(1</em>, <em>-1)</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pomoxis/common/bio.html#shotgun_library"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pomoxis.common.bio.shotgun_library" title="Permalink to this definition">¶</a></dt>
+<dd><p>Generate random fragment sequences of a given input sequence</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>seq</strong> – input sequence.</li>
+<li><strong>mu</strong> – mean fragment length.</li>
+<li><strong>sigma</strong> – stdv of fragment length.</li>
+<li><strong>direction</strong> – tuple represention direction of output sequences with
+respect to the input sequence.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Yields:</th><td class="field-body"><p class="first last">sequence fragments.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Could be made more efficient using buffers for random samples
+and handling cases separately.</p>
+</div>
+</dd></dl>
+
+</div>
+<div class="section" id="module-pomoxis.common.catalogue_errors">
+<span id="pomoxis-common-catalogue-errors-module"></span><h2>pomoxis.common.catalogue_errors module<a class="headerlink" href="#module-pomoxis.common.catalogue_errors" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="pomoxis.common.catalogue_errors.AlignSeg">
+<em class="property">class </em><code class="descclassname">pomoxis.common.catalogue_errors.</code><code class="descname">AlignSeg</code><span class="sig-paren">(</span><em>rname</em>, <em>qname</em>, <em>pairs</em>, <em>rlen</em><span class="sig-paren">)</span><a class="headerlink" href="#pomoxis.common.catalogue_errors.AlignSeg" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">tuple</span></code></p>
+<dl class="attribute">
+<dt id="pomoxis.common.catalogue_errors.AlignSeg.pairs">
+<code class="descname">pairs</code><a class="headerlink" href="#pomoxis.common.catalogue_errors.AlignSeg.pairs" title="Permalink to this definition">¶</a></dt>
+<dd><p>Alias for field number 2</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="pomoxis.common.catalogue_errors.AlignSeg.qname">
+<code class="descname">qname</code><a class="headerlink" href="#pomoxis.common.catalogue_errors.AlignSeg.qname" title="Permalink to this definition">¶</a></dt>
+<dd><p>Alias for field number 1</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="pomoxis.common.catalogue_errors.AlignSeg.rlen">
+<code class="descname">rlen</code><a class="headerlink" href="#pomoxis.common.catalogue_errors.AlignSeg.rlen" title="Permalink to this definition">¶</a></dt>
+<dd><p>Alias for field number 3</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="pomoxis.common.catalogue_errors.AlignSeg.rname">
+<code class="descname">rname</code><a class="headerlink" href="#pomoxis.common.catalogue_errors.AlignSeg.rname" title="Permalink to this definition">¶</a></dt>
+<dd><p>Alias for field number 0</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="pomoxis.common.catalogue_errors.ClassifyErrorTest">
+<em class="property">class </em><code class="descclassname">pomoxis.common.catalogue_errors.</code><code class="descname">ClassifyErrorTest</code><span class="sig-paren">(</span><em>methodName='runTest'</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pomoxis/common/catalogue_errors.html#ClassifyErrorTest"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pomoxis.common.catalogue_errors.ClassifyErrorTest" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">unittest.case.TestCase</span></code></p>
+<dl class="method">
+<dt id="pomoxis.common.catalogue_errors.ClassifyErrorTest.setUp">
+<code class="descname">setUp</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/pomoxis/common/catalogue_errors.html#ClassifyErrorTest.setUp"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pomoxis.common.catalogue_errors.ClassifyErrorTest.setUp" title="Permalink to this definition">¶</a></dt>
+<dd><p>Hook method for setting up the test fixture before exercising it.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="pomoxis.common.catalogue_errors.ClassifyErrorTest.test_HP_complete_sub">
+<code class="descname">test_HP_complete_sub</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/pomoxis/common/catalogue_errors.html#ClassifyErrorTest.test_HP_complete_sub"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pomoxis.common.catalogue_errors.ClassifyErrorTest.test_HP_complete_sub" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="pomoxis.common.catalogue_errors.ClassifyErrorTest.test_HP_complex_sub">
+<code class="descname">test_HP_complex_sub</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/pomoxis/common/catalogue_errors.html#ClassifyErrorTest.test_HP_complex_sub"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pomoxis.common.catalogue_errors.ClassifyErrorTest.test_HP_complex_sub" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="pomoxis.common.catalogue_errors.ClassifyErrorTest.test_HP_del_join">
+<code class="descname">test_HP_del_join</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/pomoxis/common/catalogue_errors.html#ClassifyErrorTest.test_HP_del_join"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pomoxis.common.catalogue_errors.ClassifyErrorTest.test_HP_del_join" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="pomoxis.common.catalogue_errors.ClassifyErrorTest.test_HP_del_join2">
+<code class="descname">test_HP_del_join2</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/pomoxis/common/catalogue_errors.html#ClassifyErrorTest.test_HP_del_join2"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pomoxis.common.catalogue_errors.ClassifyErrorTest.test_HP_del_join2" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="pomoxis.common.catalogue_errors.ClassifyErrorTest.test_HP_del_join3">
+<code class="descname">test_HP_del_join3</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/pomoxis/common/catalogue_errors.html#ClassifyErrorTest.test_HP_del_join3"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pomoxis.common.catalogue_errors.ClassifyErrorTest.test_HP_del_join3" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="pomoxis.common.catalogue_errors.ClassifyErrorTest.test_HP_del_join4">
+<code class="descname">test_HP_del_join4</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/pomoxis/common/catalogue_errors.html#ClassifyErrorTest.test_HP_del_join4"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pomoxis.common.catalogue_errors.ClassifyErrorTest.test_HP_del_join4" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="pomoxis.common.catalogue_errors.ClassifyErrorTest.test_HP_flk_sub_ext">
+<code class="descname">test_HP_flk_sub_ext</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/pomoxis/common/catalogue_errors.html#ClassifyErrorTest.test_HP_flk_sub_ext"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pomoxis.common.catalogue_errors.ClassifyErrorTest.test_HP_flk_sub_ext" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="pomoxis.common.catalogue_errors.ClassifyErrorTest.test_HP_flk_sub_trc">
+<code class="descname">test_HP_flk_sub_trc</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/pomoxis/common/catalogue_errors.html#ClassifyErrorTest.test_HP_flk_sub_trc"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pomoxis.common.catalogue_errors.ClassifyErrorTest.test_HP_flk_sub_trc" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="pomoxis.common.catalogue_errors.ClassifyErrorTest.test_HP_ins_split">
+<code class="descname">test_HP_ins_split</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/pomoxis/common/catalogue_errors.html#ClassifyErrorTest.test_HP_ins_split"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pomoxis.common.catalogue_errors.ClassifyErrorTest.test_HP_ins_split" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="pomoxis.common.catalogue_errors.ClassifyErrorTest.test_HP_ins_split2">
+<code class="descname">test_HP_ins_split2</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/pomoxis/common/catalogue_errors.html#ClassifyErrorTest.test_HP_ins_split2"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pomoxis.common.catalogue_errors.ClassifyErrorTest.test_HP_ins_split2" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="pomoxis.common.catalogue_errors.ClassifyErrorTest.test_HP_ins_split3">
+<code class="descname">test_HP_ins_split3</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/pomoxis/common/catalogue_errors.html#ClassifyErrorTest.test_HP_ins_split3"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pomoxis.common.catalogue_errors.ClassifyErrorTest.test_HP_ins_split3" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="pomoxis.common.catalogue_errors.ClassifyErrorTest.test_HP_ins_split4">
+<code class="descname">test_HP_ins_split4</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/pomoxis/common/catalogue_errors.html#ClassifyErrorTest.test_HP_ins_split4"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pomoxis.common.catalogue_errors.ClassifyErrorTest.test_HP_ins_split4" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="pomoxis.common.catalogue_errors.ClassifyErrorTest.test_HP_ins_split5">
+<code class="descname">test_HP_ins_split5</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/pomoxis/common/catalogue_errors.html#ClassifyErrorTest.test_HP_ins_split5"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pomoxis.common.catalogue_errors.ClassifyErrorTest.test_HP_ins_split5" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="pomoxis.common.catalogue_errors.ClassifyErrorTest.test_HP_ins_split6">
+<code class="descname">test_HP_ins_split6</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/pomoxis/common/catalogue_errors.html#ClassifyErrorTest.test_HP_ins_split6"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pomoxis.common.catalogue_errors.ClassifyErrorTest.test_HP_ins_split6" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="pomoxis.common.catalogue_errors.ClassifyErrorTest.test_HP_messy_sub">
+<code class="descname">test_HP_messy_sub</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/pomoxis/common/catalogue_errors.html#ClassifyErrorTest.test_HP_messy_sub"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pomoxis.common.catalogue_errors.ClassifyErrorTest.test_HP_messy_sub" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="pomoxis.common.catalogue_errors.ClassifyErrorTest.test_HP_messy_sub_ext">
+<code class="descname">test_HP_messy_sub_ext</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/pomoxis/common/catalogue_errors.html#ClassifyErrorTest.test_HP_messy_sub_ext"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pomoxis.common.catalogue_errors.ClassifyErrorTest.test_HP_messy_sub_ext" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="pomoxis.common.catalogue_errors.ClassifyErrorTest.test_HP_not_complete_sub">
+<code class="descname">test_HP_not_complete_sub</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/pomoxis/common/catalogue_errors.html#ClassifyErrorTest.test_HP_not_complete_sub"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pomoxis.common.catalogue_errors.ClassifyErrorTest.test_HP_not_complete_sub" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="pomoxis.common.catalogue_errors.ClassifyErrorTest.test_HP_sub_join">
+<code class="descname">test_HP_sub_join</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/pomoxis/common/catalogue_errors.html#ClassifyErrorTest.test_HP_sub_join"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pomoxis.common.catalogue_errors.ClassifyErrorTest.test_HP_sub_join" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="pomoxis.common.catalogue_errors.ClassifyErrorTest.test_HP_sub_split">
+<code class="descname">test_HP_sub_split</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/pomoxis/common/catalogue_errors.html#ClassifyErrorTest.test_HP_sub_split"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pomoxis.common.catalogue_errors.ClassifyErrorTest.test_HP_sub_split" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="pomoxis.common.catalogue_errors.ClassifyErrorTest.test_HP_sub_swap_ext">
+<code class="descname">test_HP_sub_swap_ext</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/pomoxis/common/catalogue_errors.html#ClassifyErrorTest.test_HP_sub_swap_ext"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pomoxis.common.catalogue_errors.ClassifyErrorTest.test_HP_sub_swap_ext" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="pomoxis.common.catalogue_errors.ClassifyErrorTest.test_HP_sub_swap_trc">
+<code class="descname">test_HP_sub_swap_trc</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/pomoxis/common/catalogue_errors.html#ClassifyErrorTest.test_HP_sub_swap_trc"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pomoxis.common.catalogue_errors.ClassifyErrorTest.test_HP_sub_swap_trc" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="pomoxis.common.catalogue_errors.ClassifyErrorTest.test_HP_sub_swap_trc2">
+<code class="descname">test_HP_sub_swap_trc2</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/pomoxis/common/catalogue_errors.html#ClassifyErrorTest.test_HP_sub_swap_trc2"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pomoxis.common.catalogue_errors.ClassifyErrorTest.test_HP_sub_swap_trc2" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="pomoxis.common.catalogue_errors.ClassifyErrorTest.test_HP_swap_sub_trc">
+<code class="descname">test_HP_swap_sub_trc</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/pomoxis/common/catalogue_errors.html#ClassifyErrorTest.test_HP_swap_sub_trc"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pomoxis.common.catalogue_errors.ClassifyErrorTest.test_HP_swap_sub_trc" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="pomoxis.common.catalogue_errors.ClassifyErrorTest.test_complex_HP_del">
+<code class="descname">test_complex_HP_del</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/pomoxis/common/catalogue_errors.html#ClassifyErrorTest.test_complex_HP_del"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pomoxis.common.catalogue_errors.ClassifyErrorTest.test_complex_HP_del" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="pomoxis.common.catalogue_errors.ClassifyErrorTest.test_fwd_repeat_ins">
+<code class="descname">test_fwd_repeat_ins</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/pomoxis/common/catalogue_errors.html#ClassifyErrorTest.test_fwd_repeat_ins"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pomoxis.common.catalogue_errors.ClassifyErrorTest.test_fwd_repeat_ins" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="pomoxis.common.catalogue_errors.ClassifyErrorTest.test_hp_del_2_0">
+<code class="descname">test_hp_del_2_0</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/pomoxis/common/catalogue_errors.html#ClassifyErrorTest.test_hp_del_2_0"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pomoxis.common.catalogue_errors.ClassifyErrorTest.test_hp_del_2_0" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="pomoxis.common.catalogue_errors.ClassifyErrorTest.test_hp_del_6_5">
+<code class="descname">test_hp_del_6_5</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/pomoxis/common/catalogue_errors.html#ClassifyErrorTest.test_hp_del_6_5"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pomoxis.common.catalogue_errors.ClassifyErrorTest.test_hp_del_6_5" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="pomoxis.common.catalogue_errors.ClassifyErrorTest.test_hp_ins">
+<code class="descname">test_hp_ins</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/pomoxis/common/catalogue_errors.html#ClassifyErrorTest.test_hp_ins"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pomoxis.common.catalogue_errors.ClassifyErrorTest.test_hp_ins" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="pomoxis.common.catalogue_errors.ClassifyErrorTest.test_long_multi_del">
+<code class="descname">test_long_multi_del</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/pomoxis/common/catalogue_errors.html#ClassifyErrorTest.test_long_multi_del"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pomoxis.common.catalogue_errors.ClassifyErrorTest.test_long_multi_del" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="pomoxis.common.catalogue_errors.ClassifyErrorTest.test_long_multi_ins">
+<code class="descname">test_long_multi_ins</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/pomoxis/common/catalogue_errors.html#ClassifyErrorTest.test_long_multi_ins"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pomoxis.common.catalogue_errors.ClassifyErrorTest.test_long_multi_ins" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="pomoxis.common.catalogue_errors.ClassifyErrorTest.test_multi_del">
+<code class="descname">test_multi_del</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/pomoxis/common/catalogue_errors.html#ClassifyErrorTest.test_multi_del"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pomoxis.common.catalogue_errors.ClassifyErrorTest.test_multi_del" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="pomoxis.common.catalogue_errors.ClassifyErrorTest.test_multi_ins">
+<code class="descname">test_multi_ins</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/pomoxis/common/catalogue_errors.html#ClassifyErrorTest.test_multi_ins"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pomoxis.common.catalogue_errors.ClassifyErrorTest.test_multi_ins" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="pomoxis.common.catalogue_errors.Context">
+<em class="property">class </em><code class="descclassname">pomoxis.common.catalogue_errors.</code><code class="descname">Context</code><span class="sig-paren">(</span><em>p_i</em>, <em>qb</em>, <em>rb</em><span class="sig-paren">)</span><a class="headerlink" href="#pomoxis.common.catalogue_errors.Context" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">tuple</span></code></p>
+<dl class="attribute">
+<dt id="pomoxis.common.catalogue_errors.Context.p_i">
+<code class="descname">p_i</code><a class="headerlink" href="#pomoxis.common.catalogue_errors.Context.p_i" title="Permalink to this definition">¶</a></dt>
+<dd><p>Alias for field number 0</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="pomoxis.common.catalogue_errors.Context.qb">
+<code class="descname">qb</code><a class="headerlink" href="#pomoxis.common.catalogue_errors.Context.qb" title="Permalink to this definition">¶</a></dt>
+<dd><p>Alias for field number 1</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="pomoxis.common.catalogue_errors.Context.rb">
+<code class="descname">rb</code><a class="headerlink" href="#pomoxis.common.catalogue_errors.Context.rb" title="Permalink to this definition">¶</a></dt>
+<dd><p>Alias for field number 2</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="pomoxis.common.catalogue_errors.Error">
+<em class="property">class </em><code class="descclassname">pomoxis.common.catalogue_errors.</code><code class="descname">Error</code><span class="sig-paren">(</span><em>rp</em>, <em>rname</em>, <em>qp</em>, <em>qname</em>, <em>ref</em>, <em>match</em>, <em>read</em>, <em>counts</em>, <em>klass</em>, <em>aggr_klass</em><span class="sig-paren">)</span><a class="headerlink" href="#pomoxis.common.catalogue_errors.Error" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">tuple</span></code></p>
+<dl class="attribute">
+<dt id="pomoxis.common.catalogue_errors.Error.aggr_klass">
+<code class="descname">aggr_klass</code><a class="headerlink" href="#pomoxis.common.catalogue_errors.Error.aggr_klass" title="Permalink to this definition">¶</a></dt>
+<dd><p>Alias for field number 9</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="pomoxis.common.catalogue_errors.Error.counts">
+<code class="descname">counts</code><a class="headerlink" href="#pomoxis.common.catalogue_errors.Error.counts" title="Permalink to this definition">¶</a></dt>
+<dd><p>Alias for field number 7</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="pomoxis.common.catalogue_errors.Error.klass">
+<code class="descname">klass</code><a class="headerlink" href="#pomoxis.common.catalogue_errors.Error.klass" title="Permalink to this definition">¶</a></dt>
+<dd><p>Alias for field number 8</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="pomoxis.common.catalogue_errors.Error.match">
+<code class="descname">match</code><a class="headerlink" href="#pomoxis.common.catalogue_errors.Error.match" title="Permalink to this definition">¶</a></dt>
+<dd><p>Alias for field number 5</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="pomoxis.common.catalogue_errors.Error.qname">
+<code class="descname">qname</code><a class="headerlink" href="#pomoxis.common.catalogue_errors.Error.qname" title="Permalink to this definition">¶</a></dt>
+<dd><p>Alias for field number 3</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="pomoxis.common.catalogue_errors.Error.qp">
+<code class="descname">qp</code><a class="headerlink" href="#pomoxis.common.catalogue_errors.Error.qp" title="Permalink to this definition">¶</a></dt>
+<dd><p>Alias for field number 2</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="pomoxis.common.catalogue_errors.Error.read">
+<code class="descname">read</code><a class="headerlink" href="#pomoxis.common.catalogue_errors.Error.read" title="Permalink to this definition">¶</a></dt>
+<dd><p>Alias for field number 6</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="pomoxis.common.catalogue_errors.Error.ref">
+<code class="descname">ref</code><a class="headerlink" href="#pomoxis.common.catalogue_errors.Error.ref" title="Permalink to this definition">¶</a></dt>
+<dd><p>Alias for field number 4</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="pomoxis.common.catalogue_errors.Error.rname">
+<code class="descname">rname</code><a class="headerlink" href="#pomoxis.common.catalogue_errors.Error.rname" title="Permalink to this definition">¶</a></dt>
+<dd><p>Alias for field number 1</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="pomoxis.common.catalogue_errors.Error.rp">
+<code class="descname">rp</code><a class="headerlink" href="#pomoxis.common.catalogue_errors.Error.rp" title="Permalink to this definition">¶</a></dt>
+<dd><p>Alias for field number 0</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="function">
+<dt id="pomoxis.common.catalogue_errors.analyze_counts">
+<code class="descclassname">pomoxis.common.catalogue_errors.</code><code class="descname">analyze_counts</code><span class="sig-paren">(</span><em>counts</em>, <em>total_ref_length</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pomoxis/common/catalogue_errors.html#analyze_counts"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pomoxis.common.catalogue_errors.analyze_counts" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="pomoxis.common.catalogue_errors.are_adjacent">
+<code class="descclassname">pomoxis.common.catalogue_errors.</code><code class="descname">are_adjacent</code><span class="sig-paren">(</span><em>inds</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pomoxis/common/catalogue_errors.html#are_adjacent"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pomoxis.common.catalogue_errors.are_adjacent" title="Permalink to this definition">¶</a></dt>
+<dd><p>“Check if all int indices in the interable are consecutive.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>inds</strong> – iterable of ints</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">bool</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="pomoxis.common.catalogue_errors.classify_error">
+<code class="descclassname">pomoxis.common.catalogue_errors.</code><code class="descname">classify_error</code><span class="sig-paren">(</span><em>context</em>, <em>indel_sizes=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pomoxis/common/catalogue_errors.html#classify_error"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pomoxis.common.catalogue_errors.classify_error" title="Permalink to this definition">¶</a></dt>
+<dd><p>Classify error within an alignment.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>context</strong> – <cite>Context</cite> object</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Indel_sizes:</th><td class="field-body">iterable of int, for binning indel sizes.
+indels &gt;= to indel_sizes[0] will not be considered as HP splitting/joining indels</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">(str reference_context,
+str match_line,
+str query_context,
+dict counts of sub/ins/del within context)</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="pomoxis.common.catalogue_errors.classify_hp_indel">
+<code class="descclassname">pomoxis.common.catalogue_errors.</code><code class="descname">classify_hp_indel</code><span class="sig-paren">(</span><em>p_i</em>, <em>key</em>, <em>errors</em>, <em>runs1</em>, <em>seq2</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pomoxis/common/catalogue_errors.html#classify_hp_indel"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pomoxis.common.catalogue_errors.classify_hp_indel" title="Permalink to this definition">¶</a></dt>
+<dd><p>Look for a specific kind of HP indel that splits or joins two HPs</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>p_i</strong> – int, index of error</li>
+<li><strong>key</strong> – key of error type within errors (should be ‘ins’ or ‘del’)</li>
+<li><strong>errors</strong> – dict of error positions</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Runs1:</th><td class="field-body"><p class="first">np.ndarray, rle encoding of sequence1 (query if deletions
+join two HPs, or ref if insertions split a HP</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Seq2:</th><td class="field-body"><p class="first">iterable of str of sequence2 (ref if deletions join two HPs,
+or query if insertions split a HP.</p>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">str classification or None</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="pomoxis.common.catalogue_errors.classify_hp_sub">
+<code class="descclassname">pomoxis.common.catalogue_errors.</code><code class="descname">classify_hp_sub</code><span class="sig-paren">(</span><em>p_i</em>, <em>adjacent</em>, <em>errors</em>, <em>match_line</em>, <em>rb_runs</em>, <em>qb_runs</em>, <em>qp_is_hp</em>, <em>rp_is_hp</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pomoxis/common/catalogue_errors.html#classify_hp_sub"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pomoxis.common.catalogue_errors.classify_hp_sub" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="pomoxis.common.catalogue_errors.get_aggr_counts">
+<code class="descclassname">pomoxis.common.catalogue_errors.</code><code class="descname">get_aggr_counts</code><span class="sig-paren">(</span><em>total_counts</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pomoxis/common/catalogue_errors.html#get_aggr_counts"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pomoxis.common.catalogue_errors.get_aggr_counts" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="pomoxis.common.catalogue_errors.get_aggr_klass">
+<code class="descclassname">pomoxis.common.catalogue_errors.</code><code class="descname">get_aggr_klass</code><span class="sig-paren">(</span><em>klass</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pomoxis/common/catalogue_errors.html#get_aggr_klass"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pomoxis.common.catalogue_errors.get_aggr_klass" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="pomoxis.common.catalogue_errors.get_errors">
+<code class="descclassname">pomoxis.common.catalogue_errors.</code><code class="descname">get_errors</code><span class="sig-paren">(</span><em>aln</em>, <em>tree=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pomoxis/common/catalogue_errors.html#get_errors"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pomoxis.common.catalogue_errors.get_errors" title="Permalink to this definition">¶</a></dt>
+<dd><p>Find positions of errors in an aligment.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>aln</strong> – iterable of <cite>AlignPos</cite> objects.</li>
+<li><strong>bed_file</strong> – path to .bed file of regions to include in analysis.</li>
+<li><strong>tree</strong> – <cite>intervaltree.IntervalTree</cite> object of regions to analyse.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">( [(ri, qi, ‘error_type’, last_ri, last_qi)], aligned_ref_len)
+ri, qi: ref and query positions
+error_type: ‘D’, ‘I’ or ‘S’
+last_ri, last_qi: ref and query positions of the last match
+aligned_ref_len: total aligned reference length (taking account of masking tree)</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="pomoxis.common.catalogue_errors.get_match_line_and_err_index">
+<code class="descclassname">pomoxis.common.catalogue_errors.</code><code class="descname">get_match_line_and_err_index</code><span class="sig-paren">(</span><em>context</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pomoxis/common/catalogue_errors.html#get_match_line_and_err_index"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pomoxis.common.catalogue_errors.get_match_line_and_err_index" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="pomoxis.common.catalogue_errors.get_run">
+<code class="descclassname">pomoxis.common.catalogue_errors.</code><code class="descname">get_run</code><span class="sig-paren">(</span><em>i</em>, <em>runs</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pomoxis/common/catalogue_errors.html#get_run"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pomoxis.common.catalogue_errors.get_run" title="Permalink to this definition">¶</a></dt>
+<dd><p>Find run to which the i’th element belongs.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>i</strong> – int, element index wihin input to <cite>rle</cite>.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">int, element index within runs to which i belongs.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="pomoxis.common.catalogue_errors.is_in_hp">
+<code class="descclassname">pomoxis.common.catalogue_errors.</code><code class="descname">is_in_hp</code><span class="sig-paren">(</span><em>seq</em>, <em>p_i</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pomoxis/common/catalogue_errors.html#is_in_hp"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pomoxis.common.catalogue_errors.is_in_hp" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="pomoxis.common.catalogue_errors.main">
+<code class="descclassname">pomoxis.common.catalogue_errors.</code><code class="descname">main</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/pomoxis/common/catalogue_errors.html#main"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pomoxis.common.catalogue_errors.main" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="pomoxis.common.catalogue_errors.plot_summary">
+<code class="descclassname">pomoxis.common.catalogue_errors.</code><code class="descname">plot_summary</code><span class="sig-paren">(</span><em>df</em>, <em>outdir</em>, <em>prefix</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pomoxis/common/catalogue_errors.html#plot_summary"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pomoxis.common.catalogue_errors.plot_summary" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create a plot showing the Q-score for each error klass if all larger
+error classes are removed</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="pomoxis.common.catalogue_errors.preprocess_error">
+<code class="descclassname">pomoxis.common.catalogue_errors.</code><code class="descname">preprocess_error</code><span class="sig-paren">(</span><em>p</em>, <em>aln</em>, <em>search_by_q</em>, <em>offset=10</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pomoxis/common/catalogue_errors.html#preprocess_error"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pomoxis.common.catalogue_errors.preprocess_error" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>p</strong> – int, position (ref position, or query position)</li>
+<li><strong>aln</strong> – iterable of <cite>AlignPos</cite> objects.</li>
+<li><strong>search_by_q</strong> – bool, whether to search by query position (typically done if qi is None).</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last"><cite>Context</cite> object</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="pomoxis.common.catalogue_errors.qscore">
+<code class="descclassname">pomoxis.common.catalogue_errors.</code><code class="descname">qscore</code><span class="sig-paren">(</span><em>d</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pomoxis/common/catalogue_errors.html#qscore"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pomoxis.common.catalogue_errors.qscore" title="Permalink to this definition">¶</a></dt>
+<dd><p>Calculate a qscore</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="pomoxis.common.catalogue_errors.rle">
+<code class="descclassname">pomoxis.common.catalogue_errors.</code><code class="descname">rle</code><span class="sig-paren">(</span><em>it</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pomoxis/common/catalogue_errors.html#rle"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pomoxis.common.catalogue_errors.rle" title="Permalink to this definition">¶</a></dt>
+<dd><p>Calculate a run length encoding (rle), of an input vector.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>it</strong> – iterable.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">structured array with fields <cite>start</cite>, <cite>length</cite>, and <cite>value</cite>.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="pomoxis.common.catalogue_errors.simple_klass">
+<code class="descclassname">pomoxis.common.catalogue_errors.</code><code class="descname">simple_klass</code><span class="sig-paren">(</span><em>adjacent</em>, <em>n</em>, <em>err_type</em>, <em>indel_sizes</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pomoxis/common/catalogue_errors.html#simple_klass"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pomoxis.common.catalogue_errors.simple_klass" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="module-pomoxis.common.common_errors_from_bam">
+<span id="pomoxis-common-common-errors-from-bam-module"></span><h2>pomoxis.common.common_errors_from_bam module<a class="headerlink" href="#module-pomoxis.common.common_errors_from_bam" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="pomoxis.common.common_errors_from_bam.count_errors">
+<code class="descclassname">pomoxis.common.common_errors_from_bam.</code><code class="descname">count_errors</code><span class="sig-paren">(</span><em>errors</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pomoxis/common/common_errors_from_bam.html#count_errors"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pomoxis.common.common_errors_from_bam.count_errors" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="pomoxis.common.common_errors_from_bam.get_errors">
+<code class="descclassname">pomoxis.common.common_errors_from_bam.</code><code class="descname">get_errors</code><span class="sig-paren">(</span><em>aln</em>, <em>ref_seq=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pomoxis/common/common_errors_from_bam.html#get_errors"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pomoxis.common.common_errors_from_bam.get_errors" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="pomoxis.common.common_errors_from_bam.get_qscores">
+<code class="descclassname">pomoxis.common.common_errors_from_bam.</code><code class="descname">get_qscores</code><span class="sig-paren">(</span><em>counts</em>, <em>ref_len</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pomoxis/common/common_errors_from_bam.html#get_qscores"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pomoxis.common.common_errors_from_bam.get_qscores" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="pomoxis.common.common_errors_from_bam.main">
+<code class="descclassname">pomoxis.common.common_errors_from_bam.</code><code class="descname">main</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/pomoxis/common/common_errors_from_bam.html#main"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pomoxis.common.common_errors_from_bam.main" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="pomoxis.common.common_errors_from_bam.scuff_ref">
+<code class="descclassname">pomoxis.common.common_errors_from_bam.</code><code class="descname">scuff_ref</code><span class="sig-paren">(</span><em>ref_seq</em>, <em>errors</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pomoxis/common/common_errors_from_bam.html#scuff_ref"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pomoxis.common.common_errors_from_bam.scuff_ref" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="module-pomoxis.common.coverage_from_bam">
+<span id="pomoxis-common-coverage-from-bam-module"></span><h2>pomoxis.common.coverage_from_bam module<a class="headerlink" href="#module-pomoxis.common.coverage_from_bam" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="pomoxis.common.coverage_from_bam.coverage_of_region">
+<code class="descclassname">pomoxis.common.coverage_from_bam.</code><code class="descname">coverage_of_region</code><span class="sig-paren">(</span><em>region</em>, <em>bam_fp</em>, <em>stride</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pomoxis/common/coverage_from_bam.html#coverage_of_region"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pomoxis.common.coverage_from_bam.coverage_of_region" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get coverage data for a region</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="pomoxis.common.coverage_from_bam.coverage_summary_of_region">
+<code class="descclassname">pomoxis.common.coverage_from_bam.</code><code class="descname">coverage_summary_of_region</code><span class="sig-paren">(</span><em>*args</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pomoxis/common/coverage_from_bam.html#coverage_summary_of_region"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pomoxis.common.coverage_from_bam.coverage_summary_of_region" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="pomoxis.common.coverage_from_bam.main">
+<code class="descclassname">pomoxis.common.coverage_from_bam.</code><code class="descname">main</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/pomoxis/common/coverage_from_bam.html#main"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pomoxis.common.coverage_from_bam.main" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="module-pomoxis.common.qscores_from_summary">
+<span id="pomoxis-common-qscores-from-summary-module"></span><h2>pomoxis.common.qscores_from_summary module<a class="headerlink" href="#module-pomoxis.common.qscores_from_summary" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="pomoxis.common.qscores_from_summary.extract_vals">
+<code class="descclassname">pomoxis.common.qscores_from_summary.</code><code class="descname">extract_vals</code><span class="sig-paren">(</span><em>vals</em>, <em>name_map</em>, <em>col_ind</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pomoxis/common/qscores_from_summary.html#extract_vals"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pomoxis.common.qscores_from_summary.extract_vals" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="pomoxis.common.qscores_from_summary.get_ref_cover">
+<code class="descclassname">pomoxis.common.qscores_from_summary.</code><code class="descname">get_ref_cover</code><span class="sig-paren">(</span><em>lines</em>, <em>ref</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pomoxis/common/qscores_from_summary.html#get_ref_cover"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pomoxis.common.qscores_from_summary.get_ref_cover" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="pomoxis.common.qscores_from_summary.main">
+<code class="descclassname">pomoxis.common.qscores_from_summary.</code><code class="descname">main</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/pomoxis/common/qscores_from_summary.html#main"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pomoxis.common.qscores_from_summary.main" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="module-pomoxis.common.ref_seqs_from_bam">
+<span id="pomoxis-common-ref-seqs-from-bam-module"></span><h2>pomoxis.common.ref_seqs_from_bam module<a class="headerlink" href="#module-pomoxis.common.ref_seqs_from_bam" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="pomoxis.common.ref_seqs_from_bam.main">
+<code class="descclassname">pomoxis.common.ref_seqs_from_bam.</code><code class="descname">main</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/pomoxis/common/ref_seqs_from_bam.html#main"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pomoxis.common.ref_seqs_from_bam.main" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="module-pomoxis.common.simulate_calls">
+<span id="pomoxis-common-simulate-calls-module"></span><h2>pomoxis.common.simulate_calls module<a class="headerlink" href="#module-pomoxis.common.simulate_calls" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="pomoxis.common.simulate_calls.main">
+<code class="descclassname">pomoxis.common.simulate_calls.</code><code class="descname">main</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/pomoxis/common/simulate_calls.html#main"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pomoxis.common.simulate_calls.main" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="pomoxis.common.simulate_calls.worker">
+<code class="descclassname">pomoxis.common.simulate_calls.</code><code class="descname">worker</code><span class="sig-paren">(</span><em>args</em>, <em>noise=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pomoxis/common/simulate_calls.html#worker"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pomoxis.common.simulate_calls.worker" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="module-pomoxis.common.stats_from_bam">
+<span id="pomoxis-common-stats-from-bam-module"></span><h2>pomoxis.common.stats_from_bam module<a class="headerlink" href="#module-pomoxis.common.stats_from_bam" title="Permalink to this headline">¶</a></h2>
+<p>Tabulate some simple alignment stats from sam.</p>
+<dl class="function">
+<dt id="pomoxis.common.stats_from_bam.main">
+<code class="descclassname">pomoxis.common.stats_from_bam.</code><code class="descname">main</code><span class="sig-paren">(</span><em>arguments=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pomoxis/common/stats_from_bam.html#main"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pomoxis.common.stats_from_bam.main" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="pomoxis.common.stats_from_bam.masked_stats_from_aligned_read">
+<code class="descclassname">pomoxis.common.stats_from_bam.</code><code class="descname">masked_stats_from_aligned_read</code><span class="sig-paren">(</span><em>read</em>, <em>references</em>, <em>lengths</em>, <em>tree</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pomoxis/common/stats_from_bam.html#masked_stats_from_aligned_read"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pomoxis.common.stats_from_bam.masked_stats_from_aligned_read" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create summary information for an aligned read over regions in bed file.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>read</strong> – <code class="xref py py-class docutils literal notranslate"><span class="pre">pysam.AlignedSegment</span></code> object</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="pomoxis.common.stats_from_bam.stats_from_aligned_read">
+<code class="descclassname">pomoxis.common.stats_from_bam.</code><code class="descname">stats_from_aligned_read</code><span class="sig-paren">(</span><em>read</em>, <em>references</em>, <em>lengths</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pomoxis/common/stats_from_bam.html#stats_from_aligned_read"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pomoxis.common.stats_from_bam.stats_from_aligned_read" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create summary information for an aligned read</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>read</strong> – <code class="xref py py-class docutils literal notranslate"><span class="pre">pysam.AlignedSegment</span></code> object</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+<div class="section" id="module-pomoxis.common.subsample_bam">
+<span id="pomoxis-common-subsample-bam-module"></span><h2>pomoxis.common.subsample_bam module<a class="headerlink" href="#module-pomoxis.common.subsample_bam" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="pomoxis.common.subsample_bam.filter_read">
+<code class="descclassname">pomoxis.common.subsample_bam.</code><code class="descname">filter_read</code><span class="sig-paren">(</span><em>r</em>, <em>bam</em>, <em>args</em>, <em>logger</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pomoxis/common/subsample_bam.html#filter_read"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pomoxis.common.subsample_bam.filter_read" title="Permalink to this definition">¶</a></dt>
+<dd><p>Decide whether a read should be filtered out, returning a bool</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="pomoxis.common.subsample_bam.main">
+<code class="descclassname">pomoxis.common.subsample_bam.</code><code class="descname">main</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/pomoxis/common/subsample_bam.html#main"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pomoxis.common.subsample_bam.main" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="pomoxis.common.subsample_bam.subsample_region_proportionally">
+<code class="descclassname">pomoxis.common.subsample_bam.</code><code class="descname">subsample_region_proportionally</code><span class="sig-paren">(</span><em>region</em>, <em>args</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pomoxis/common/subsample_bam.html#subsample_region_proportionally"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pomoxis.common.subsample_bam.subsample_region_proportionally" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="pomoxis.common.subsample_bam.subsample_region_uniformly">
+<code class="descclassname">pomoxis.common.subsample_bam.</code><code class="descname">subsample_region_uniformly</code><span class="sig-paren">(</span><em>region</em>, <em>args</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pomoxis/common/subsample_bam.html#subsample_region_uniformly"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pomoxis.common.subsample_bam.subsample_region_uniformly" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="module-pomoxis.common.summary_from_stats">
+<span id="pomoxis-common-summary-from-stats-module"></span><h2>pomoxis.common.summary_from_stats module<a class="headerlink" href="#module-pomoxis.common.summary_from_stats" title="Permalink to this headline">¶</a></h2>
+<p>Tabulate some simple alignment stats from sam.</p>
+<dl class="function">
+<dt id="pomoxis.common.summary_from_stats.main">
+<code class="descclassname">pomoxis.common.summary_from_stats.</code><code class="descname">main</code><span class="sig-paren">(</span><em>arguments=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pomoxis/common/summary_from_stats.html#main"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pomoxis.common.summary_from_stats.main" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="pomoxis.common.summary_from_stats.qscore">
+<code class="descclassname">pomoxis.common.summary_from_stats.</code><code class="descname">qscore</code><span class="sig-paren">(</span><em>d</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pomoxis/common/summary_from_stats.html#qscore"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pomoxis.common.summary_from_stats.qscore" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="pomoxis.common.summary_from_stats.summarise_stats">
+<code class="descclassname">pomoxis.common.summary_from_stats.</code><code class="descname">summarise_stats</code><span class="sig-paren">(</span><em>d</em>, <em>percentiles=(10</em>, <em>50</em>, <em>90)</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pomoxis/common/summary_from_stats.html#summarise_stats"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pomoxis.common.summary_from_stats.summarise_stats" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="module-pomoxis.common.trim_alignments">
+<span id="pomoxis-common-trim-alignments-module"></span><h2>pomoxis.common.trim_alignments module<a class="headerlink" href="#module-pomoxis.common.trim_alignments" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="pomoxis.common.trim_alignments.main">
+<code class="descclassname">pomoxis.common.trim_alignments.</code><code class="descname">main</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/pomoxis/common/trim_alignments.html#main"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pomoxis.common.trim_alignments.main" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="module-pomoxis.common.util">
+<span id="pomoxis-common-util-module"></span><h2>pomoxis.common.util module<a class="headerlink" href="#module-pomoxis.common.util" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="pomoxis.common.util.AlignPos">
+<em class="property">class </em><code class="descclassname">pomoxis.common.util.</code><code class="descname">AlignPos</code><span class="sig-paren">(</span><em>qpos</em>, <em>qbase</em>, <em>rpos</em>, <em>rbase</em><span class="sig-paren">)</span><a class="headerlink" href="#pomoxis.common.util.AlignPos" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">tuple</span></code></p>
+<dl class="attribute">
+<dt id="pomoxis.common.util.AlignPos.qbase">
+<code class="descname">qbase</code><a class="headerlink" href="#pomoxis.common.util.AlignPos.qbase" title="Permalink to this definition">¶</a></dt>
+<dd><p>Alias for field number 1</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="pomoxis.common.util.AlignPos.qpos">
+<code class="descname">qpos</code><a class="headerlink" href="#pomoxis.common.util.AlignPos.qpos" title="Permalink to this definition">¶</a></dt>
+<dd><p>Alias for field number 0</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="pomoxis.common.util.AlignPos.rbase">
+<code class="descname">rbase</code><a class="headerlink" href="#pomoxis.common.util.AlignPos.rbase" title="Permalink to this definition">¶</a></dt>
+<dd><p>Alias for field number 3</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="pomoxis.common.util.AlignPos.rpos">
+<code class="descname">rpos</code><a class="headerlink" href="#pomoxis.common.util.AlignPos.rpos" title="Permalink to this definition">¶</a></dt>
+<dd><p>Alias for field number 2</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="pomoxis.common.util.Region">
+<em class="property">class </em><code class="descclassname">pomoxis.common.util.</code><code class="descname">Region</code><span class="sig-paren">(</span><em>ref_name</em>, <em>start</em>, <em>end</em><span class="sig-paren">)</span><a class="headerlink" href="#pomoxis.common.util.Region" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">tuple</span></code></p>
+<dl class="attribute">
+<dt id="pomoxis.common.util.Region.end">
+<code class="descname">end</code><a class="headerlink" href="#pomoxis.common.util.Region.end" title="Permalink to this definition">¶</a></dt>
+<dd><p>Alias for field number 2</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="pomoxis.common.util.Region.ref_name">
+<code class="descname">ref_name</code><a class="headerlink" href="#pomoxis.common.util.Region.ref_name" title="Permalink to this definition">¶</a></dt>
+<dd><p>Alias for field number 0</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="pomoxis.common.util.Region.start">
+<code class="descname">start</code><a class="headerlink" href="#pomoxis.common.util.Region.start" title="Permalink to this definition">¶</a></dt>
+<dd><p>Alias for field number 1</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="pomoxis.common.util.SeqLen">
+<em class="property">class </em><code class="descclassname">pomoxis.common.util.</code><code class="descname">SeqLen</code><span class="sig-paren">(</span><em>option_strings</em>, <em>dest</em>, <em>nargs=None</em>, <em>const=None</em>, <em>default=None</em>, <em>type=None</em>, <em>choices=None</em>, <em>required=False</em>, <em>help=None</em>, <em>metavar=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pomoxis/common/util.html#SeqLen"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pomoxis.common.util.SeqLen" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">argparse.Action</span></code></p>
+<p>Parse a sequence length from str such as 4.8mb or from fastx.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="pomoxis.common.util.cat">
+<code class="descclassname">pomoxis.common.util.</code><code class="descname">cat</code><span class="sig-paren">(</span><em>files</em>, <em>output</em>, <em>chunks=10485760</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pomoxis/common/util.html#cat"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pomoxis.common.util.cat" title="Permalink to this definition">¶</a></dt>
+<dd><p>Concatenate a set of files.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>files</strong> – input filenames.</li>
+<li><strong>output</strong> – output filenames.</li>
+<li><strong>chunks</strong> – buffersize for filecopy.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="pomoxis.common.util.chunks">
+<code class="descclassname">pomoxis.common.util.</code><code class="descname">chunks</code><span class="sig-paren">(</span><em>iterable</em>, <em>n</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pomoxis/common/util.html#chunks"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pomoxis.common.util.chunks" title="Permalink to this definition">¶</a></dt>
+<dd><p>Generate fixed length chunks of an interable.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>iterable</strong> – input sequence.</li>
+<li><strong>n</strong> – chunk size.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="pomoxis.common.util.coverage_from_fastx">
+<code class="descclassname">pomoxis.common.util.</code><code class="descname">coverage_from_fastx</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/pomoxis/common/util.html#coverage_from_fastx"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pomoxis.common.util.coverage_from_fastx" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="pomoxis.common.util.extract_long_reads">
+<code class="descclassname">pomoxis.common.util.</code><code class="descname">extract_long_reads</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/pomoxis/common/util.html#extract_long_reads"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pomoxis.common.util.extract_long_reads" title="Permalink to this definition">¶</a></dt>
+<dd><p>Filter fastq to longest reads.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="pomoxis.common.util.fast_convert">
+<code class="descclassname">pomoxis.common.util.</code><code class="descname">fast_convert</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/pomoxis/common/util.html#fast_convert"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pomoxis.common.util.fast_convert" title="Permalink to this definition">¶</a></dt>
+<dd><p>Convert between fasta&lt;-&gt;fastq.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="pomoxis.common.util.get_pairs">
+<code class="descclassname">pomoxis.common.util.</code><code class="descname">get_pairs</code><span class="sig-paren">(</span><em>aln</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pomoxis/common/util.html#get_pairs"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pomoxis.common.util.get_pairs" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return generator of pairs.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>aln</strong> – <cite>pysam.AlignedSegment</cite> object.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">generator of <cite>AlignPos</cite> objects.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="pomoxis.common.util.get_seq_lens">
+<code class="descclassname">pomoxis.common.util.</code><code class="descname">get_seq_lens</code><span class="sig-paren">(</span><em>fastx</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pomoxis/common/util.html#get_seq_lens"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pomoxis.common.util.get_seq_lens" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get sequence lengths from fastx file</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="pomoxis.common.util.get_trimmed_pairs">
+<code class="descclassname">pomoxis.common.util.</code><code class="descname">get_trimmed_pairs</code><span class="sig-paren">(</span><em>aln</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pomoxis/common/util.html#get_trimmed_pairs"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pomoxis.common.util.get_trimmed_pairs" title="Permalink to this definition">¶</a></dt>
+<dd><p>Trim aligned pairs to the alignment.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>aln</strong> – <cite>pysam.AlignedSegment</cite> object</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Yields pairs:</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="pomoxis.common.util.intervaltrees_from_bed">
+<code class="descclassname">pomoxis.common.util.</code><code class="descname">intervaltrees_from_bed</code><span class="sig-paren">(</span><em>path_to_bed</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pomoxis/common/util.html#intervaltrees_from_bed"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pomoxis.common.util.intervaltrees_from_bed" title="Permalink to this definition">¶</a></dt>
+<dd><p>Created dict of intervaltrees from a .bed file, indexed by chrom.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>path_to_bed</strong> – str, path to .bed file.</li>
+<li><strong>chrom</strong> – str, chromosome name.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">{ str chrom: <cite>intervaltree.IntervalTree</cite> obj }.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="pomoxis.common.util.parse_regions">
+<code class="descclassname">pomoxis.common.util.</code><code class="descname">parse_regions</code><span class="sig-paren">(</span><em>regions</em>, <em>ref_lengths=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pomoxis/common/util.html#parse_regions"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pomoxis.common.util.parse_regions" title="Permalink to this definition">¶</a></dt>
+<dd><p>Parse region strings into <cite>Region</cite> objects.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>regions</strong> – iterable of str</li>
+<li><strong>ref_lengths</strong> – {str ref_names: int ref_lengths}, if provided Region.end
+will default to the reference length instead of None.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">parse_regions</span><span class="p">([</span><span class="s1">&#39;Ecoli&#39;</span><span class="p">])[</span><span class="mi">0</span><span class="p">]</span>
+<span class="go">Region(ref_name=&#39;Ecoli&#39;, start=0, end=None)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">parse_regions</span><span class="p">([</span><span class="s1">&#39;Ecoli:1000-2000&#39;</span><span class="p">])[</span><span class="mi">0</span><span class="p">]</span>
+<span class="go">Region(ref_name=&#39;Ecoli&#39;, start=1000, end=2000)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">parse_regions</span><span class="p">([</span><span class="s1">&#39;Ecoli:-1000&#39;</span><span class="p">])[</span><span class="mi">0</span><span class="p">]</span>
+<span class="go">Region(ref_name=&#39;Ecoli&#39;, start=0, end=1000)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">parse_regions</span><span class="p">([</span><span class="s1">&#39;Ecoli:500-&#39;</span><span class="p">])[</span><span class="mi">0</span><span class="p">]</span>
+<span class="go">Region(ref_name=&#39;Ecoli&#39;, start=500, end=None)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">parse_regions</span><span class="p">([</span><span class="s1">&#39;Ecoli&#39;</span><span class="p">],</span> <span class="n">ref_lengths</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;Ecoli&#39;</span><span class="p">:</span><span class="mi">4800000</span><span class="p">})[</span><span class="mi">0</span><span class="p">]</span>
+<span class="go">Region(ref_name=&#39;Ecoli&#39;, start=0, end=4800000)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">parse_regions</span><span class="p">([</span><span class="s1">&#39;NC_000921.1:10000-20000&#39;</span><span class="p">])[</span><span class="mi">0</span><span class="p">]</span>
+<span class="go">Region(ref_name=&#39;NC_000921.1&#39;, start=10000, end=20000)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="pomoxis.common.util.split_fastx">
+<code class="descclassname">pomoxis.common.util.</code><code class="descname">split_fastx</code><span class="sig-paren">(</span><em>fname</em>, <em>output</em>, <em>chunksize=10000</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pomoxis/common/util.html#split_fastx"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pomoxis.common.util.split_fastx" title="Permalink to this definition">¶</a></dt>
+<dd><p>Split records in a fasta/q into fixed lengths.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>fname</strong> – input filename.</li>
+<li><strong>output</strong> – output filename.</li>
+<li><strong>chunksize</strong> – (maximum) length of output records.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="pomoxis.common.util.split_fastx_cmdline">
+<code class="descclassname">pomoxis.common.util.</code><code class="descname">split_fastx_cmdline</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/pomoxis/common/util.html#split_fastx_cmdline"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pomoxis.common.util.split_fastx_cmdline" title="Permalink to this definition">¶</a></dt>
+<dd><p>Split records in a fasta/q file into chunks of a maximum size.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="pomoxis.common.util.yield_from_bed">
+<code class="descclassname">pomoxis.common.util.</code><code class="descname">yield_from_bed</code><span class="sig-paren">(</span><em>bedfile</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pomoxis/common/util.html#yield_from_bed"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pomoxis.common.util.yield_from_bed" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="module-pomoxis.common">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-pomoxis.common" title="Permalink to this headline">¶</a></h2>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="pomoxis.provider.html" class="btn btn-neutral float-right" title="pomoxis.provider package" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="pomoxis.align.html" class="btn btn-neutral float-left" title="pomoxis.align package" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2017, Oxford Nanopore Technologies
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

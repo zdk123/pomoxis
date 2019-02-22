@@ -1,0 +1,110 @@
+pomoxis.common package
+======================
+
+Submodules
+----------
+
+pomoxis.common.bio module
+-------------------------
+
+.. automodule:: pomoxis.common.bio
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+pomoxis.common.catalogue\_errors module
+---------------------------------------
+
+.. automodule:: pomoxis.common.catalogue_errors
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+pomoxis.common.common\_errors\_from\_bam module
+-----------------------------------------------
+
+.. automodule:: pomoxis.common.common_errors_from_bam
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+pomoxis.common.coverage\_from\_bam module
+-----------------------------------------
+
+.. automodule:: pomoxis.common.coverage_from_bam
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+pomoxis.common.qscores\_from\_summary module
+--------------------------------------------
+
+.. automodule:: pomoxis.common.qscores_from_summary
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+pomoxis.common.ref\_seqs\_from\_bam module
+------------------------------------------
+
+.. automodule:: pomoxis.common.ref_seqs_from_bam
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+pomoxis.common.simulate\_calls module
+-------------------------------------
+
+.. automodule:: pomoxis.common.simulate_calls
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+pomoxis.common.stats\_from\_bam module
+--------------------------------------
+
+.. automodule:: pomoxis.common.stats_from_bam
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+pomoxis.common.subsample\_bam module
+------------------------------------
+
+.. automodule:: pomoxis.common.subsample_bam
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+pomoxis.common.summary\_from\_stats module
+------------------------------------------
+
+.. automodule:: pomoxis.common.summary_from_stats
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+pomoxis.common.trim\_alignments module
+--------------------------------------
+
+.. automodule:: pomoxis.common.trim_alignments
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+pomoxis.common.util module
+--------------------------
+
+.. automodule:: pomoxis.common.util
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+
+Module contents
+---------------
+
+.. automodule:: pomoxis.common
+    :members:
+    :undoc-members:
+    :show-inheritance:

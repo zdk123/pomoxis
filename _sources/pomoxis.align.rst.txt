@@ -1,0 +1,38 @@
+pomoxis.align package
+=====================
+
+Submodules
+----------
+
+pomoxis.align.common module
+---------------------------
+
+.. automodule:: pomoxis.align.common
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+pomoxis.align.minimap module
+----------------------------
+
+.. automodule:: pomoxis.align.minimap
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+pomoxis.align.py2client module
+------------------------------
+
+.. automodule:: pomoxis.align.py2client
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+
+Module contents
+---------------
+
+.. automodule:: pomoxis.align
+    :members:
+    :undoc-members:
+    :show-inheritance:

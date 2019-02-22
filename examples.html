@@ -1,0 +1,382 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Pomoxis Examples &mdash; Pomoxis 0.2.2 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script type="text/javascript" src="_static/jquery.js"></script>
+        <script type="text/javascript" src="_static/underscore.js"></script>
+        <script type="text/javascript" src="_static/doctools.js"></script>
+        <script type="text/javascript" src="_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="pomoxis package" href="pomoxis.html" />
+    <link rel="prev" title="Pomoxis - bioinformatics tools for nanopore research" href="index.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home"> Pomoxis
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.2.2
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Pomoxis Examples</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#read-alignment-with-minimap2">Read Alignment with minimap2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#fast-de-novo-assembly">Fast de-novo assembly</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#consensus-assessment">Consensus assessment</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#simulating-nanopore-reads">Simulating nanopore reads</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#subsampling-alignments">Subsampling alignments</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="pomoxis.html">pomoxis package</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Pomoxis</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>Pomoxis Examples</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/examples.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="pomoxis-examples">
+<h1>Pomoxis Examples<a class="headerlink" href="#pomoxis-examples" title="Permalink to this headline">¶</a></h1>
+<p>Below you will find examples of some key tools within pomoxis. Not all programs
+are listed, plenty more are available, and all have help information available
+from their commandline interface.</p>
+<p>More complex workflows (using tools from pomoxis) can be found within the
+<a class="reference external" href="https://github.com/nanoporetech/katuali">katuali</a> software package.</p>
+<div class="section" id="read-alignment-with-minimap2">
+<h2>Read Alignment with minimap2<a class="headerlink" href="#read-alignment-with-minimap2" title="Permalink to this headline">¶</a></h2>
+<p>A basic alignment workflow with commonl options is captured within the
+<cite>mini_align</cite> program. This performs alignment of nanopore reads to a reference
+sequence using appropriate parameters, performing the common sorting and indexing
+post alignment steps, and exposes a minimal set of (optional) commonly useful
+settings.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>mini_align <span class="o">[</span>-h<span class="o">]</span> -r &lt;reference&gt; -i &lt;fastq&gt;
+
+Align fastq/a formatted reads to a genome using minimap2.
+
+    -h  show this <span class="nb">help</span> text.
+    -r  reference, should be a fasta file. If correspondng minimap indices
+        <span class="k">do</span> not exist they will be created. <span class="o">(</span>required<span class="o">)</span>.
+    -i  fastq/a input reads <span class="o">(</span>required<span class="o">)</span>.
+    -I  split index every ~NUM input bases <span class="o">(</span>default: 16G, this is larger
+        than the usual minimap2 default<span class="o">)</span>.
+    -a  aggressively extend gaps <span class="o">(</span>sets -A1 -B2 -O2 -E1 <span class="k">for</span> minimap2<span class="o">)</span>.
+    -P  filter to only primary alignments <span class="o">(</span>i.e. run samtools view -F <span class="m">2308</span><span class="o">)</span>
+    -n  sort bam by <span class="nb">read</span> name.
+    -c  chunk size. Input reads/contigs will be broken into chunks
+        prior to alignment.
+    -t  alignment threads <span class="o">(</span>default: <span class="m">1</span><span class="o">)</span>.
+    -p  output file prefix <span class="o">(</span>default: reads<span class="o">)</span>.
+    -m  fill MD tag.
+</pre></div>
+</div>
+</div>
+<div class="section" id="fast-de-novo-assembly">
+<h2>Fast de-novo assembly<a class="headerlink" href="#fast-de-novo-assembly" title="Permalink to this headline">¶</a></h2>
+<p>From a <cite>.fastq</cite> file containing basecalls one can perform an assembly and
+consensus using the <cite>mini_assemble</cite> tool.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>mini_assemble <span class="o">[</span>-h<span class="o">]</span> -i &lt;fastq&gt;
+
+Assemble fastq/fasta formatted reads and perform POA consensus.
+
+    -h  show this <span class="nb">help</span> text.
+    -i  fastx input reads <span class="o">(</span>required<span class="o">)</span>.
+    -q  use qualities as is <span class="o">(</span>default: <span class="nb">false</span><span class="o">)</span>.
+    -r  reference fasta <span class="k">for</span> reference-guided consensus <span class="o">(</span>instead of de novo assembly<span class="o">)</span>
+    -o  output folder <span class="o">(</span>default: assm<span class="o">)</span>.
+    -p  output file prefix <span class="o">(</span>default: reads<span class="o">)</span>.
+    -t  number of minimap and racon threads <span class="o">(</span>default: <span class="m">1</span><span class="o">)</span>.
+    -m  number of racon rounds <span class="o">(</span>default: <span class="m">4</span><span class="o">)</span>.
+    -n  number of racon shuffles <span class="o">(</span>default: <span class="m">1</span>. If not <span class="m">1</span>, should be &gt;10<span class="o">)</span>.
+    -w  racon window length <span class="o">(</span>default: <span class="m">500</span><span class="o">)</span>.
+    -c  trim adapters from reads prior to everything <span class="k">else</span>.
+    -e  error correct longest e% of reads prior to assembly, or an estimated coverage <span class="o">(</span>e.g. 2x<span class="o">)</span>.
+        For an estimated coverage, the -l option must be a fastx or a length <span class="o">(</span>e.g. <span class="m">4</span>.8mb<span class="o">)</span>.
+    -l  Reference length, either as a number <span class="o">(</span>e.g. <span class="m">4</span>.8mb<span class="o">)</span> or fastx from which length will be calculated.
+    -x  log all commands before running.
+</pre></div>
+</div>
+<p>For E.coli on a computer with 16 CPUs this should take around 5 minutes for
+a 50-fold coverage dataset.</p>
+<p>When a reference fasta is provided, a reference-guided consensus is generated
+instead of a de novo assembly.</p>
+<p>The options <cite>-c</cite> and <cite>-e</cite> can be used to improve the assembly quality at the
+expense of speed (particularly <cite>-e</cite>).</p>
+</div>
+<div class="section" id="consensus-assessment">
+<h2>Consensus assessment<a class="headerlink" href="#consensus-assessment" title="Permalink to this headline">¶</a></h2>
+<p>To evaluate the accuracy of a consensus, the <cite>assess_assembly</cite> program will
+perform the necessary alignments between an assembly and reference
+sequence and provide post-processing on the aligner output to produce a variety
+of summary information and graphs.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>assess_assembly <span class="o">[</span>-h<span class="o">]</span> -r &lt;reference&gt; -i &lt;fastq&gt;
+
+Calculate accuracy statistics <span class="k">for</span> an assembly.
+
+    -h  show this <span class="nb">help</span> text.
+    -r  reference, should be a fasta file. If correspondng bwa indices
+        <span class="k">do</span> not exist they will be created. <span class="o">(</span>required<span class="o">)</span>.
+    -i  fastq/a input assembly <span class="o">(</span>required<span class="o">)</span>.
+    -c  chunk size. Input reads/contigs will be broken into chunks
+        prior to alignment, <span class="m">0</span> will not chunk <span class="o">(</span>default <span class="m">100000</span><span class="o">)</span>.
+    -C  catalogue errors.
+    -t  alignment threads <span class="o">(</span>default: <span class="m">1</span><span class="o">)</span>.
+    -p  output file prefix <span class="o">(</span>default: assm<span class="o">)</span>.
+    -T  trim consensus to primary alignments of truth to assembly.
+</pre></div>
+</div>
+<p>By default alignment is performed in chunks (of the assembly) for speed, though
+this can be disabled. It can also be useful when faced with structural
+variants.</p>
+</div>
+<div class="section" id="simulating-nanopore-reads">
+<h2>Simulating nanopore reads<a class="headerlink" href="#simulating-nanopore-reads" title="Permalink to this headline">¶</a></h2>
+<p>The program <cite>simulate_calls</cite> will produce a <cite>.fasta</cite> sequencing containing
+sequences with similar error properties to those produced by nanopore
+sequencing. This is achieved by using the
+<a class="reference external" href="https://github.com/nanoporetech/scrappie">scrappie</a> python API to simulate
+a nanopore ionic current trace and subsequently perform basecalling. The read
+accuracy can be tuned by adding additional noise.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>simulate_calls <span class="o">[</span>-h<span class="o">]</span> fasta ncalls
+
+Simulate basecalls with scrappy.
+
+positional arguments:
+  fasta              Source sequence file.
+  ncalls             Number of basecalls to produce.
+
+optional arguments:
+  -h, --help         show this <span class="nb">help</span> message and <span class="nb">exit</span>
+  --mu MU            mean fragment length.
+  --sigma SIGMA      stdv fragment length.
+  --noise NOISE      Additional Gaussian noise on signal.
+  --threads THREADS  number of worker threads.
+</pre></div>
+</div>
+<p>Reads are produced as random fragments of the input sequence with a log-normal
+length distribution.</p>
+</div>
+<div class="section" id="subsampling-alignments">
+<h2>Subsampling alignments<a class="headerlink" href="#subsampling-alignments" title="Permalink to this headline">¶</a></h2>
+<p>As it is often useful to benchmark analysis techniques at various coverage
+depths of a reference, the program <cite>subsample_bam</cite> implements a greedy method
+to attempt uniform sampling of a <cite>.bam</cite> alignment file.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>subsample bam to uniform or proportional depth <span class="o">[</span>-h<span class="o">]</span> bam depth <span class="o">[</span>depth ...<span class="o">]</span>
+
+positional arguments:
+  bam                   input bam file.
+  depth                 Target depth.
+
+optional arguments:
+  -h, --help            show this <span class="nb">help</span> message and <span class="nb">exit</span>
+  -o OUTPUT_PREFIX, --output_prefix OUTPUT_PREFIX
+                        Output prefix <span class="o">(</span>default: sub_sampled<span class="o">)</span>
+  -r REGIONS <span class="o">[</span>REGIONS ...<span class="o">]</span>, --regions REGIONS <span class="o">[</span>REGIONS ...<span class="o">]</span>
+                        Only process given regions. <span class="o">(</span>default: None<span class="o">)</span>
+  -p PROFILE, --profile PROFILE
+                        Stride in genomic coordinates <span class="k">for</span> depth profile.
+                        <span class="o">(</span>default: <span class="m">1000</span><span class="o">)</span>
+  -O <span class="o">{</span>fwd,rev<span class="o">}</span>, --orientation <span class="o">{</span>fwd,rev<span class="o">}</span>
+                        Sample only forward or reverse reads. <span class="o">(</span>default: None<span class="o">)</span>
+  -t THREADS, --threads THREADS
+                        Number of threads to use. <span class="o">(</span>default: -1<span class="o">)</span>
+  -q QUALITY, --quality QUALITY
+                        Filter reads by mean qscore. <span class="o">(</span>default: None<span class="o">)</span>
+  -a ACCURACY, --accuracy ACCURACY
+                        Filter reads by accuracy. <span class="o">(</span>default: None<span class="o">)</span>
+  -c COVERAGE, --coverage COVERAGE
+                        Filter reads by coverage <span class="o">(</span>what fraction of the <span class="nb">read</span>
+                        aligns<span class="o">)</span>. <span class="o">(</span>default: None<span class="o">)</span>
+
+Uniform sampling options:
+  -x PATIENCE, --patience PATIENCE
+                        Maximum iterations with no change in median coverage
+                        before aborting. <span class="o">(</span>default: <span class="m">5</span><span class="o">)</span>
+  -s STRIDE, --stride STRIDE
+                        Stride in genomic coordinates when searching <span class="k">for</span> new
+                        reads. Smaller can lead to more compact pileup.
+                        <span class="o">(</span>default: <span class="m">1000</span><span class="o">)</span>
+
+Proportional sampling options:
+  -P, --proportional    Activate proportional sampling, thus keeping depth
+                        variations of the pileup. <span class="o">(</span>default: False<span class="o">)</span>
+  -S SEED, --seed SEED  Random seed <span class="k">for</span> proportional downsampling of reads.
+</pre></div>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="pomoxis.html" class="btn btn-neutral float-right" title="pomoxis package" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="index.html" class="btn btn-neutral float-left" title="Pomoxis - bioinformatics tools for nanopore research" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2017, Oxford Nanopore Technologies
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
