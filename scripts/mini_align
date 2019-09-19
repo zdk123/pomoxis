@@ -102,6 +102,12 @@ if [ "$CHUNK" != "" ]; then
   INPUT=${INPUT}.chunks
 fi
 
+
+## Duplicate for maf output 
+##  # TODO: better way than doing the alignment twice?
+minimap2 --cs=long ${ALIGN_OPTS} -t ${THREADS} -c ${REFERENCE}.mmi ${INPUT} |
+    paftools.js view -f maf - > ${PREFIX}.maf
+
 minimap2 ${ALIGN_OPTS} -t ${THREADS} -a ${REFERENCE}.mmi ${INPUT} |
   samtools view -@ ${THREADS} -T ${REFERENCE} ${FILTER} -bS - |
   samtools sort -@ ${THREADS} ${SORT} -l 9 -o ${PREFIX}.bam - \
